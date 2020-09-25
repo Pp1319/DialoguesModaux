@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbIdentification = new System.Windows.Forms.GroupBox();
             this.textMDP = new System.Windows.Forms.TextBox();
             this.textID = new System.Windows.Forms.TextBox();
@@ -36,7 +37,11 @@
             this.Connexion = new System.Windows.Forms.Button();
             this.Quitter = new System.Windows.Forms.Button();
             this.buttonTest = new System.Windows.Forms.Button();
+            this.errorProviderID = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderMDP = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbIdentification.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMDP)).BeginInit();
             this.SuspendLayout();
             // 
             // gbIdentification
@@ -58,6 +63,7 @@
             // 
             this.textMDP.Location = new System.Drawing.Point(168, 115);
             this.textMDP.Name = "textMDP";
+            this.textMDP.PasswordChar = '*';
             this.textMDP.Size = new System.Drawing.Size(137, 24);
             this.textMDP.TabIndex = 3;
             this.textMDP.Validating += new System.ComponentModel.CancelEventHandler(this.EventValidatingMDP);
@@ -126,6 +132,14 @@
             this.buttonTest.UseVisualStyleBackColor = true;
             this.buttonTest.Click += new System.EventHandler(this.EventClickTest);
             // 
+            // errorProviderID
+            // 
+            this.errorProviderID.ContainerControl = this;
+            // 
+            // errorProviderMDP
+            // 
+            this.errorProviderMDP.ContainerControl = this;
+            // 
             // DialModal
             // 
             this.AcceptButton = this.Connexion;
@@ -141,6 +155,8 @@
             this.Text = "DialogueModal";
             this.gbIdentification.ResumeLayout(false);
             this.gbIdentification.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMDP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -155,5 +171,7 @@
         private System.Windows.Forms.Button Connexion;
         private System.Windows.Forms.Button Quitter;
         private System.Windows.Forms.Button buttonTest;
+        private System.Windows.Forms.ErrorProvider errorProviderID;
+        private System.Windows.Forms.ErrorProvider errorProviderMDP;
     }
 }
